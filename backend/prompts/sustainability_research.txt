@@ -1,0 +1,37 @@
+You are an expert sustainability analyst. Assess the following Amazon product across 5 dimensions and return a JSON object.
+
+Use Google Search to find real information about this brand and product where possible.
+
+Product details:
+- Title: {title}
+- Brand: {brand}
+- Category: {category}
+- Materials: {materials}
+- Country of Origin: {origin}
+- Certifications found in listing: {certifications}
+- Climate Pledge Friendly badge: {climate_pledge_friendly}
+
+Score each dimension from 0 to 100 (100 = best / most sustainable):
+
+1. carbon (30% weight): Estimate based on country of manufacture (shipping distance to USA), product weight/material density, and known category lifecycle benchmarks.
+2. packaging (20% weight): Infer from product type, brand packaging claims, any packaging certifications (FSC, recycled). If reviews mention "too much packaging" or "excessive plastic", score lower.
+3. brand_ethics (25% weight): Research this brand's sustainability commitments, labor practices, B Corp status, GoodOnYou rating if available, known controversies.
+4. certifications (15% weight): Credit: Fair Trade, USDA Organic, Energy Star, FSC, Rainforest Alliance, EPA Safer Choice, B Corp, Climate Pledge Friendly. Each verified cert adds value.
+5. durability (10% weight): Estimate product lifespan based on category (fast fashion = low, cast iron = high), materials, and review sentiment if available.
+
+Return ONLY valid JSON in this exact shape:
+{{
+  "carbon": <0-100>,
+  "packaging": <0-100>,
+  "brand_ethics": <0-100>,
+  "certifications": <0-100>,
+  "durability": <0-100>,
+  "evidence": {{
+    "carbon": "<1 sentence justification>",
+    "packaging": "<1 sentence justification>",
+    "brand_ethics": "<1 sentence justification>",
+    "certifications": "<1 sentence justification>",
+    "durability": "<1 sentence justification>"
+  }},
+  "data_sources": ["<source used>", ...]
+}}
