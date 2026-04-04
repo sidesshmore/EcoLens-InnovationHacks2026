@@ -1,0 +1,77 @@
+# ─────────────────────────────────────────────
+#  EcoLens — Root .gitignore
+# ─────────────────────────────────────────────
+
+# ── Environment files (NEVER commit) ──────────────────────────────────────────
+.env
+.env.*
+!.env.example          # template is safe to commit
+
+# ── Markdown files ─────────────────────────────────────────────────────────────
+*.md
+
+# ── macOS ──────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# ── Node / Extension / Dashboard ───────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.tsbuildinfo
+
+# ── Next.js ────────────────────────────────────────────────────────────────────
+dashboard/.next/
+dashboard/out/
+dashboard/.vercel
+
+# ── Plasmo / Chrome Extension ──────────────────────────────────────────────────
+extension/.plasmo/
+extension/build/
+
+# ── Python / FastAPI backend ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── IDE / Editor ───────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Certs / Keys ───────────────────────────────────────────────────────────────
+*.pem
+*.key
+*.p12
+*.pfx
+
+# ── Logs ───────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Build artifacts ────────────────────────────────────────────────────────────
+/build
+/dist
+/coverage
