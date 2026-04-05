@@ -124,6 +124,8 @@ The dashboard requires Auth0 login. Set `AUTH0_BASE_URL=http://localhost:3000` i
 
 All AI calls follow a single path: **Extension DOM → FastAPI Orchestrator → Parallel Agents → Supabase Cache → Extension UI.**
 
+![EcoLens Architecture](architecture.png)
+
 ```
 User browses amazon.com/dp/...
             │
