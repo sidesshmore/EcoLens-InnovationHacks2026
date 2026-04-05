@@ -26,7 +26,7 @@ export default async function Home() {
     <div className="min-h-screen bg-white">
 
       {/* ── Header ──────────────────────────────────────────────────────────── */}
-      <header className="border-b border-zinc-200 sticky top-0 bg-white/90 backdrop-blur-sm z-10">
+      <header className="border-b border-zinc-200 sticky top-0 bg-background/90 backdrop-blur-sm z-10">
         <div className="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between">
           <div className="flex items-center gap-1.5">
             <Leaf className="h-4 w-4 text-emerald-600" aria-hidden />

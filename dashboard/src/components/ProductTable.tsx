@@ -484,9 +484,14 @@ export function ProductTable({ items }: { items: RichScanItem[] }) {
                   </span>
                 </div>
                 <div className="px-3 py-3 flex items-center min-w-0">
-                  <span className="text-sm font-medium text-zinc-900 truncate">
-                    {item.product_title ?? item.asin}
-                  </span>
+                  <div className="flex flex-col min-w-0 overflow-hidden">
+                    <span className="text-sm font-medium text-zinc-900 truncate">
+                      {item.product_title ?? item.asin}
+                    </span>
+                    {item.product_title && item.product_title !== item.asin && !item.product_title.includes(" ") && (
+                      <span className="text-[11px] text-zinc-400 font-mono truncate">{item.asin}</span>
+                    )}
+                  </div>
                 </div>
                 <div className="px-3 py-3 flex items-center">
                   <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${theme.verdictBg} ${theme.verdictText}`}>

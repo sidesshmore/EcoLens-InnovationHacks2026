@@ -258,6 +258,60 @@ html.a11y-high-contrast.dark {
   }
 }
 
+/* ── Dark mode: coerce hardcoded zinc/white classes ──────────────────────── */
+/* Unlayered CSS has higher cascade precedence than @layer utilities, so these
+   override Tailwind utility classes — same mechanism as a11y-high-contrast.  */
+html.dark {
+  /* Backgrounds */
+  & .bg-white         { background-color: var(--card); }
+  & .bg-white\/90     { background-color: oklch(0.205 0 0 / 90%); }
+  & .bg-zinc-50       { background-color: var(--muted); }
+  & .bg-zinc-100      { background-color: oklch(0.22 0 0); }
+  & .bg-zinc-50\/70   { background-color: oklch(0.20 0 0 / 70%); }
+
+  /* Interactive row states */
+  & .hover\:bg-zinc-50\/80:hover           { background-color: oklch(0.22 0 0 / 80%); }
+  & .hover\:bg-zinc-100:hover              { background-color: oklch(0.24 0 0); }
+  & .hover\:bg-zinc-50:hover               { background-color: oklch(0.20 0 0); }
+  & .focus-visible\:bg-zinc-50:focus-visible { background-color: oklch(0.20 0 0); }
+
+  /* Tinted backgrounds (verdict badges, modal highlight rows) */
+  & .bg-emerald-50    { background-color: oklch(0.22 0.04 160); }
+  & .bg-emerald-100   { background-color: oklch(0.25 0.05 160); }
+  & .bg-sky-100       { background-color: oklch(0.25 0.04 220); }
+  & .bg-amber-100     { background-color: oklch(0.25 0.04 80); }
+  & .bg-red-50        { background-color: oklch(0.22 0.04 25); }
+  & .bg-red-100       { background-color: oklch(0.25 0.05 25); }
+  & .bg-orange-50     { background-color: oklch(0.22 0.04 50); }
+
+  /* Modal score-card gradient headers */
+  & .from-emerald-50  { --tw-gradient-from: oklch(0.22 0.04 160); }
+  & .from-sky-50      { --tw-gradient-from: oklch(0.22 0.03 220); }
+  & .from-amber-50    { --tw-gradient-from: oklch(0.22 0.04 80); }
+  & .from-red-50      { --tw-gradient-from: oklch(0.22 0.04 25); }
+  & .to-white         { --tw-gradient-to: var(--card); }
+
+  /* Text */
+  & .text-zinc-900    { color: oklch(0.95 0 0); }
+  & .text-zinc-800    { color: oklch(0.88 0 0); }
+  & .text-zinc-700    { color: oklch(0.80 0 0); }
+  & .text-zinc-600    { color: oklch(0.72 0 0); }
+  & .text-zinc-500    { color: oklch(0.62 0 0); }
+  & .text-zinc-400    { color: oklch(0.54 0 0); }
+  & .text-zinc-300    { color: oklch(0.44 0 0); }
+
+  /* Borders */
+  & .border-zinc-200   { border-color: oklch(0.28 0 0); }
+  & .border-zinc-100   { border-color: oklch(0.22 0 0); }
+  & .border-emerald-100 { border-color: oklch(0.30 0.06 160); }
+  & .border-emerald-200 { border-color: oklch(0.34 0.07 160); }
+  & .border-orange-200  { border-color: oklch(0.34 0.07 50); }
+  & .divide-zinc-100 > * + * { border-color: oklch(0.22 0 0); }
+
+  /* Modal overlay — darken slightly in dark mode */
+  & .bg-black\/40     { background-color: rgb(0 0 0 / 65%); }
+}
+
 /* ── Accessibility: Reduce Motion ────────────────────────────────────────── */
 html.a11y-reduce-motion *,
 html.a11y-reduce-motion *::before,
