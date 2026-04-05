@@ -1,0 +1,1 @@
+{title} by {brand} scores {score} out of 100 on EcoLens — that's {leaf_rating} out of 5 leaves. {explanation} {alternative_hint} Want to make a greener choice today?
